@@ -1,6 +1,6 @@
 const express = require('express');
 const LoginRounter = express.Router();
-const bodyParser = require('body-parser');//to paost call
+const bodyParser = require('body-parser');//to post call
 const jwt = require('jsonwebtoken');// to generate to token
 const bcrypt = require('bcryptjs')// encrypt the password
 const config = require('../config');
@@ -45,8 +45,6 @@ LoginRounter.post("/register", async (req, res) => {
     
             res.status(200).send({ success: true, msg: "Registration succesfull" });
         }
-
-
 
     } catch (error) {
         res.status(400).send({ success: false, msg: error.message })
