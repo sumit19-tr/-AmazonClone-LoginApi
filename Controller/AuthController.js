@@ -10,6 +10,11 @@ const userModel = require('../Model/userModel');
 LoginRounter.use(bodyParser.urlencoded({ extended: true }));
 LoginRounter.use(bodyParser.json());
 
+
+LoginRounter.get('/', (req, res) => {
+    res.send('Hii Login API');
+})
+
 //get all users
 LoginRounter.get('/users', async (req, res) => {
     try {
